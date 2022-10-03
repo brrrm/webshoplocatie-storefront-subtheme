@@ -1,0 +1,20 @@
+<?php
+
+
+add_action('init', 'webshoplocatie_header_scripts'); // Add Custom Scripts to wp_head
+function webshoplocatie_header_scripts(){
+	$v = '0.1';
+    wp_register_script('watisdit', get_stylesheet_directory_uri() . '/js/watisdit.js', array('jquery'), $v);
+    wp_enqueue_script('watisdit');
+}
+
+add_action( 'storefront_footer', 'remove_storefront_credit' );
+function remove_storefront_credit(){
+	remove_action( 'storefront_footer', 'storefront_credit', 20 );	
+}
+
+add_action( 'storefront_header', 'remove_storefront_product_search' );
+function remove_storefront_product_search(){
+	remove_action('storefront_header', 'storefront_product_search', 40);
+}
+

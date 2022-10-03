@@ -1,0 +1,162 @@
+/*
+Theme Name: Webshoplocatie
+Template: storefront
+Author: Garbo
+Author URI: https://garbo.nl
+Version: 0.1
+*/
+
+:root{
+	--wsl-green: #62C1B3;
+	--wsl-green-semi-opaque: #62C1B3A8;
+	--store-basic-color: #678AA7 ;
+	--store-background-color: #CEE1EF;
+	--store-accent-color: #FF9B26;
+	--basic-black: #323638;
+
+	--page-width: 1200px;
+}
+header#masthead{
+	padding-top: 5.617924em;
+}
+.webshoplocatie-banner{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #678AA7;
+	color: #fff;
+	box-sizing: border-box;
+	height: 3em;
+	padding: 0.5em 1em;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	z-index: 1000;
+}
+.webshoplocatie-banner a.webshoplocatie-logo{
+	display: block;
+	height: 100%;
+}
+.webshoplocatie-banner img{
+	display: block;
+	height: 100%;
+}
+.webshoplocatie-banner > p{
+	flex: auto 1 1;
+	margin: 0 .5em;
+    padding-top: .3em;
+    /* font-style: italic; */
+    font-weight: 100;
+    font-size: 0.8em;
+}
+.webshoplocatie-banner .wl-whatsthis{
+	display: inline;
+    background: transparent;
+    color: #fff;
+    font-weight: 100;
+    width: auto;
+    padding: 0 0 0 0.5em;
+    text-decoration: underline;
+    font-style: italic;
+    outline: none;
+}
+.webshoplocatie-banner a.wl-cart-btn{
+	flex: auto 0 0;
+	background: #fff;
+	color: #678AA7;
+	align-self: stretch;
+	padding: 0 1em;
+	display: flex;
+	align-items: center;
+}
+.webshoplocatie-banner a.wl-cart-btn:before{
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	display:inline-block;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:1;
+	font-family:"Font Awesome 5 Free";
+	font-weight:900;
+	line-height:inherit;
+	vertical-align:baseline;content:"";
+	margin: 0 1em 0 -0.5em;
+}
+.wl-explanation{
+	display: none;
+	position: absolute;
+	left: auto;
+	top: 3.6em;
+	background: var(--store-background-color);
+	padding: 2em;
+	width: 30em;
+	border-radius: 1em;
+	color: var(--basic-black);
+	box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+	font-size: 1em;
+	font-weight: 100;
+}
+.wl-explanation.show{
+	display: block;
+}
+.wl-explanation:after{
+	display: block;
+	background: var(--store-background-color);
+	width: 1.5em;
+	height: 1.5em;
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 2em;
+	transform: rotate(45deg) translate(-50%,0);
+}
+.wl-explanation .wl-close{
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	padding: 0;
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	background: transparent url(img/close-btn.svg) center no-repeat;
+	background-size: contain;
+	text-indent: -99999em;
+	overflow: hidden;
+	outline: none;
+}
+.wl-explanation h3{
+	font-size: 1.333em;
+}
+.wl-explanation a:link,
+.wl-explanation a:visited{
+	color: var(--store-basic-color);
+	text-decoration: underline;
+}
+
+.main-navigation ul li a, 
+.site-title a, 
+ul.menu li a, 
+.site-branding h1 a, 
+.site-branding .site-description,
+button.menu-toggle, 
+button.menu-toggle:hover, 
+.handheld-navigation .dropdown-toggle{
+	color: var(--store-basic-color);
+	outline: none;
+}
+.storefront-primary-navigation{
+	background-color: var(--store-background-color);
+	color: var(--store-basic-color);
+	border-top: 6px solid var(--store-basic-color);
+}
+.storefront-primary-navigation a:link,
+.storefront-primary-navigation a:visited{
+	color: var(--store-basic-color);
+}
+.site-footer{
+	border-top: 6px solid var(--store-basic-color);
+	background: var(--store-background-color);
+}
