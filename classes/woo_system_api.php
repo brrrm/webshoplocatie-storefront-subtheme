@@ -122,7 +122,6 @@ class WC_REST_system_api_controller extends WC_REST_Controller {
 
 		if ( ! empty( $items['update'] ) ) {
 			foreach ( $items['update'] as $item ) {
-				update_option($item['id'], $item['value']);
 				$_item = new WP_REST_Request( 'PUT', $request->get_route() );
 				$_item->set_body_params( $item );
 				$_response = $this->update_item( $_item );
@@ -176,4 +175,17 @@ class WC_REST_system_api_controller extends WC_REST_Controller {
 
 		return $response;
 	}
+
+	/**
+	 * Update a setting.
+	 *
+	 * @param  WP_REST_Request $request Request data.
+	 * @return WP_Error|WP_REST_Response
+	 */
+	public function update_item( $request ) {
+		update_option($request['id'], $request['value']);
+
+		return ['id' => $request['id'], 'value' => $request['value']];
+	}
+
 }
