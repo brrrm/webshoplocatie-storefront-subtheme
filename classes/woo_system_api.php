@@ -177,15 +177,51 @@ class WC_REST_system_api_controller extends WC_REST_Controller {
 	}
 
 	/**
+	 * Get setting data.
+	 *
+	 * @since  3.0.0
+	 * @param string $group_id Group ID.
+	 * @param string $setting_id Setting ID.
+	 * @return stdClass|WP_Error
+	 */
+	public function get_setting( $setting_id ) {
+		if ( empty( $setting_id ) ) {
+			return new WP_Error( 'rest_setting_setting_invalid', __( 'Invalid setting.', 'woocommerce' ), array( 'status' => 404 ) );
+		}
+
+		$settings = $this->get_group_settings( $group_id );
+
+		if ( is_wp_error( $settings ) ) {
+			return $settings;
+		}
+
+		$array_key = array_keys( wp_list_pluck( $settings, 'id' ), $setting_id, true );
+
+		if ( empty( $array_key ) ) {
+			return new WP_Error( 'rest_setting_setting_invalid', __( 'Invalid setting.', 'woocommerce' ), array( 'status' => 404 ) );
+		}
+
+		$setting = $settings[ $array_key[0] ];
+
+		if ( ! $this->is_setting_type_valid( $setting['type'] ) ) {
+			return new WP_Error( 'rest_setting_setting_invalid', __( 'Invalid setting.', 'woocommerce' ), array( 'status' => 404 ) );
+		}
+
+		return $setting;
+	}
+
+	/**
 	 * Update a setting.
 	 *
 	 * @param  WP_REST_Request $request Request data.
 	 * @return WP_Error|WP_REST_Response
 	 */
 	public function update_item( $request ) {
+		$setting = ['id' => $request['id'], 'value' => get_option( $request['id'] )];
 		update_option($request['id'], $request['value']);
+		$response = $this->prepare_item_for_response( $setting, $request );
 
-		return ['id' => $request['id'], 'value' => $request['value']];
+		return rest_ensure_response( $response );
 	}
 
 }
