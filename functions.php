@@ -21,7 +21,7 @@ function remove_storefront_product_search(){
 add_filter( 'woocommerce_rest_api_get_rest_namespaces', 'woo_system_api' );
 function woo_system_api( $controllers ) {
 	require_once __DIR__ . '/classes/woo_system_api.php';
-	$controllers['wc/v3']['system'] = 'WC_REST_system_api';
+	$controllers['wc/v3']['system'] = 'WC_REST_system_api_controller';
 
 	return $controllers;
 }
