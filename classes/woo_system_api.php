@@ -224,4 +224,22 @@ class WC_REST_system_api_controller extends WC_REST_Controller {
 		return rest_ensure_response( $response );
 	}
 
+	/**
+	 * Prepare a single setting object for response.
+	 *
+	 * @since  3.0.0
+	 * @param object          $item Setting object.
+	 * @param WP_REST_Request $request Request object.
+	 * @return WP_REST_Response $response Response data.
+	 */
+	public function prepare_item_for_response( $item, $request ) {
+		unset( $item['option_key'] );
+		$data     = $this->filter_setting( $item );
+		$data     = $this->add_additional_fields_to_object( $data, $request );
+		$data     = $this->filter_response_by_context( $data, empty( $request['context'] ) ? 'view' : $request['context'] );
+		$response = rest_ensure_response( $data );
+		//$response->add_links( $this->prepare_links( $data['id'], $request['group_id'] ) );
+		return $response;
+	}
+
 }
