@@ -234,7 +234,7 @@ class WC_REST_system_api_controller extends WC_REST_Controller {
 	 */
 	public function prepare_item_for_response( $item, $request ) {
 		unset( $item['option_key'] );
-		$data     = $this->filter_setting( $item );
+		//$data     = $this->filter_setting( $item );
 		$data     = $this->add_additional_fields_to_object( $data, $request );
 		$data     = $this->filter_response_by_context( $data, empty( $request['context'] ) ? 'view' : $request['context'] );
 		$response = rest_ensure_response( $data );
