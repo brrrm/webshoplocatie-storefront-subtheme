@@ -140,8 +140,13 @@ header#masthead{
 	.webshoplocatie-banner a.wl-cart-btn{
 		text-indent: -999em;
 		overflow: hidden;
+		position: relative;
 	}
 	.webshoplocatie-banner a.wl-cart-btn:before{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
 		display: block;
 		width: 1em;
 		height: 1em;
