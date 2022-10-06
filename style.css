@@ -169,15 +169,22 @@ button.menu-toggle:hover,
 .page-template-template-homepage-php .header-widget-region ul.products.columns-1 li.product,
 .storefront-full-width-content .site-main ul.products.columns-1 li.product,
 .storefront-full-width-content .header-widget-region ul.products.columns-1 li.product {
-
+	display: flex;
+	display: flex;
+    flex-wrap: wrap;
+    gap: 0.667em;
+    margin-bottom: 0.667em;
+    padding-bottom: 0.667em;
+    border-bottom: 1px solid var(--store-background-color);
 }
 
 ul.products li.product .woocommerce-LoopProduct-link,
 ul.products .wc-block-grid__product .woocommerce-LoopProduct-link,
 .wc-block-grid__products li.product .woocommerce-LoopProduct-link,
 .wc-block-grid__products .wc-block-grid__product .woocommerce-LoopProduct-link {
+	flex: 100% 0 0;
     display: grid;
-	grid-gap: 1em;
+	grid-gap: .667em;
 	outline-color: var(--store-background-color);
 	grid-template-areas: "pic title"
 						 "pic price";
@@ -213,6 +220,16 @@ ul.products .wc-block-grid__product .price,
 .wc-block-grid__products li.product .price,
 .wc-block-grid__products .wc-block-grid__product .price{
 	grid-area: price;
+	text-align: left;
+}
+ul.products li.product .button, 
+ul.products .wc-block-grid__product .button, 
+.wc-block-grid__products li.product .button, 
+.wc-block-grid__products .wc-block-grid__product .button{
+	flex: 50% 1 0;
+}
+li.product .added_to_cart{
+	flex: 40% 0 1;
 }
 @media(min-width: 768px) {
 	.page-template-template-fullwidth-php .site-main ul.products.columns-1 li.product,
