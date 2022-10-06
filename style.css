@@ -198,9 +198,10 @@ ul.products li.product img,ul.products .wc-block-grid__product img,
     display: block;
     aspect-ratio: unset;
     transition: transform 0.3s ease-out, border-width 0.3s ease-out;
-    border: 0 solid var(--store-background-color);
+    border: 0px solid var(--store-background-color);
 }
-ul.products li.product img,ul.products .wc-block-grid__product img:hover,
+ul.products li.product img:hover,
+ul.products .wc-block-grid__product img:hover,
 .wc-block-grid__products li.product img:hover,
 .wc-block-grid__products .wc-block-grid__product img:hover {
 	transform: scale(3);
