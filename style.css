@@ -240,7 +240,24 @@ ul.products .wc-block-grid__product .price,
     margin-bottom: 0;
     flex: 10em 0 0;
 }
-
+ul.products li.product .button, 
+ul.products .wc-block-grid__product .button, 
+.wc-block-grid__products li.product .button, 
+.wc-block-grid__products .wc-block-grid__product .button {
+    margin-bottom: 0;
+    flex: auto 0 0;
+	outline-color: var(--store-background-color);
+}
+.added_to_cart.alt, 
+.added_to_cart, 
+.widget a.button.checkout{
+	background-color: var(--wsl-green);
+    border-color: var(--wsl-green);
+    color: #ffffff;
+    flex: 5em 0 0;
+    font-weight: normal;
+    line-height: 1em;
+}
 
 
 
