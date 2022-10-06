@@ -362,6 +362,7 @@ li.product .added_to_cart{
 	.wc-block-grid__products li.product .price,
 	.wc-block-grid__products .wc-block-grid__product .price {
 	    flex: 10em 0 0;
+	    text-align: right;
 	}
 	ul.products li.product .button, 
 	ul.products .wc-block-grid__product .button, 
