@@ -166,6 +166,11 @@ header#masthead{
 	    font-size: 1em;
 	    margin: 0;
 	}
+	.wl-explanation{
+		top: 110%;
+		left: 0.5em;
+		width: calc(100% - 1em);
+	}
 }
 
 .main-navigation ul li a, 
