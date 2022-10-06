@@ -94,6 +94,7 @@ header#masthead{
 	background: var(--store-background-color);
 	padding: 2em;
 	width: 30em;
+	max-width: 100%;
 	border-radius: 1em;
 	color: var(--basic-black);
 	box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
@@ -137,19 +138,33 @@ header#masthead{
 	text-decoration: underline;
 }
 @media(max-width: 768px) {
+	.webshoplocatie-banner{
+		height: auto;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.webshoplocatie-banner a.webshoplocatie-logo {
+		height: 2em;
+	}
+	.webshoplocatie-banner > p {
+		order: 10;
+    	text-align: left;
+    	margin: 0;
+	}
 	.webshoplocatie-banner a.wl-cart-btn{
 		text-indent: -999em;
 		overflow: hidden;
 		position: relative;
+		padding: 0 0.5em;
 	}
 	.webshoplocatie-banner a.wl-cart-btn:before{
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
+		text-indent: 0;
 		display: block;
-		width: 1em;
+		width: 1.1em;
 		height: 1em;
+		line-height: 1em;
+	    font-size: 1em;
+	    margin: 0;
 	}
 }
 
