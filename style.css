@@ -179,8 +179,8 @@ ul.products .wc-block-grid__product .woocommerce-LoopProduct-link,
     display: grid;
 	grid-gap: 1em;
 	outline-color: var(--store-background-color);
-	grid-template-areas: "pic" "title"
-						 "pic" "price";
+	grid-template-areas: "pic title"
+						 "pic price";
 	grid-template-columns: 4em auto;
 	grid-template-rows: auto;
 }
