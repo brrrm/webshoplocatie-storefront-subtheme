@@ -3,7 +3,7 @@
 		$('.webshoplocatie-banner .wl-whatsthis').click(function(e){
 			e.preventDefault();
 			let moseLeft = e.clientX - 36;
-			if($(window).width() <= 768){
+			if($(window).width() > 768){
 				// only on desktop
 				$('.wl-explanation').css({left: moseLeft +'px'});
 			}
