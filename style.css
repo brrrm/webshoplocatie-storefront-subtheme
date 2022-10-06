@@ -131,6 +131,7 @@ header#masthead{
 }
 .wl-explanation h3{
 	font-size: 1.333em;
+	line-height: 1.1667em;
 }
 .wl-explanation a:link,
 .wl-explanation a:visited{
@@ -170,6 +171,14 @@ header#masthead{
 		top: 110%;
 		left: 0.5em;
 		width: calc(100% - 1em);
+		padding: 2em 1.333em;
+	}
+	.wl-explanation:after{
+		left: 50%;
+	}
+	.wl-explanation .wl-close{
+		width: 1em;
+		height: 1em;
 	}
 }
 
