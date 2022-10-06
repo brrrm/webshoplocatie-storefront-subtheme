@@ -183,7 +183,8 @@ ul.products .wc-block-grid__product .woocommerce-LoopProduct-link,
 .wc-block-grid__products .wc-block-grid__product .woocommerce-LoopProduct-link {
 	flex: 100% 0 0;
     display: grid;
-	grid-gap: .667em;
+	grid-column-gap: .667em;
+	grid-row-gap: 0;
 	outline-color: var(--store-background-color);
 	grid-template-areas: "pic title"
 						 "pic price";
@@ -233,6 +234,7 @@ ul.products .wc-block-grid__product .button,
 .wc-block-grid__products .wc-block-grid__product .button{
 	flex: 50% 1 0;
     margin-bottom: 0;
+	background-color: var(--store-background-color);
 	outline-color: var(--store-background-color);
 }
 li.product .added_to_cart{
