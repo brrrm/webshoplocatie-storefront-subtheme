@@ -28,8 +28,8 @@
 	<?php do_action( 'storefront_before_header' ); ?>
 
 	<aside class="webshoplocatie-banner">
-		<a class="webshoplocatie-logo" href="https://www.webshoplocatie.nl/"  target="_blank" title="Shop verder op webshoplocatie.nl"><img src="<?php echo get_stylesheet_directory_uri(). '/img/logo_wit.png'; ?>" /></a>
-		<p>webkassa voor <?php echo get_bloginfo('name'); ?>. <button class="wl-whatsthis">Wat is dit?</button></p>
+		<a class="webshoplocatie-logo" href="https://www.webshoplocatie.nl/"  target="_blank" title="Shop verder op webshoplocatie.nl"><img src="<?php echo get_stylesheet_directory_uri(). '/img/webshoplocatie-logo-zwart.png'; ?>" /></a>
+		<p>Dit is de afrekenwebsite voor <?php echo get_bloginfo('name'); ?> , <button class="wl-whatsthis">Wat is dit?</button></p>
 		<a class="wl-cart-btn" href="<?php wc_get_cart_url(); ?>">Afrekenen</a>
 		<div class="wl-explanation">
 			<h3>Dit is de afrekenwebsite voor <?php echo get_bloginfo('name'); ?></h3>
@@ -39,30 +39,44 @@
 			<button class="wl-close">Close</button>
 		</div>
 	</aside>
+	<header id="container">
+		<header id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles(); ?>">
+		
+		</header><!-- #masthead -->
+		
+		<header id="content-header" class="content-header" role="banner" >
+
+			<?php
+			/**
+			 * Functions hooked into storefront_header action
+			 *
+			 * @hooked storefront_header_container                 - 0
+			 * @hooked storefront_skip_links                       - 5
+			 * @hooked storefront_social_icons                     - 10
+			 * @hooked storefront_site_branding                    - 20
+			 * @hooked storefront_secondary_navigation             - 30
+			 * @hooked storefront_product_search                   - 40
+			 * @hooked storefront_header_container_close           - 41
+			 * @hooked storefront_primary_navigation_wrapper       - 42
+			 * @hooked storefront_primary_navigation               - 50
+			 * @hooked storefront_header_cart                      - 60
+			 * @hooked storefront_primary_navigation_wrapper_close - 68
+			 */
+			do_action( 'storefront_header' );
+			?>
+			<div class="test-gegevens">
+			<h2><?php echo get_bloginfo('name'); ?></h2>
+			<p class="user-selling-points">
+				Vlotte verzending Staat bekend om tijdige verzending met tracking.<br>
+				Niet goed, geld terug<br>
+				Gratis retour<br>
+			</p>
+
+				
+			</div>
+		</header>
+			</header>
 	
-	<header id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles(); ?>">
-
-		<?php
-		/**
-		 * Functions hooked into storefront_header action
-		 *
-		 * @hooked storefront_header_container                 - 0
-		 * @hooked storefront_skip_links                       - 5
-		 * @hooked storefront_social_icons                     - 10
-		 * @hooked storefront_site_branding                    - 20
-		 * @hooked storefront_secondary_navigation             - 30
-		 * @hooked storefront_product_search                   - 40
-		 * @hooked storefront_header_container_close           - 41
-		 * @hooked storefront_primary_navigation_wrapper       - 42
-		 * @hooked storefront_primary_navigation               - 50
-		 * @hooked storefront_header_cart                      - 60
-		 * @hooked storefront_primary_navigation_wrapper_close - 68
-		 */
-		do_action( 'storefront_header' );
-		?>
-
-	</header><!-- #masthead -->
-
 	<?php
 	/**
 	 * Functions hooked in to storefront_before_content
@@ -75,6 +89,6 @@
 
 	<div id="content" class="site-content" tabindex="-1">
 		<div class="col-full">
-
+		
 		<?php
 		do_action( 'storefront_content_top' );
