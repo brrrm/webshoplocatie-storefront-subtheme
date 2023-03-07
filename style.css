@@ -37,7 +37,8 @@ header#content-header{
 }
 header#content-header,
 .storefront-breadcrumb,
-#content{
+#content,
+.site-footer .col-full{
 	max-width: var(--page-width);
 	margin-left: auto;
 	margin-right: auto;
@@ -46,7 +47,8 @@ header#content-header,
 @media all and (max-width:1400px){
 	header#content-header,
 	.storefront-breadcrumb,
-	#content{
+	#content,
+	.site-footer .col-full{
 		max-width: 100%;
 		padding: var(--mobile-width);
 	}
@@ -501,6 +503,12 @@ ul.products{
 
 
 
+
+
+
+
+
+
 .summary h1.product_title{
 	max-height: 4.8em;
 	overflow: hidden;
@@ -512,6 +520,39 @@ ul.products{
 
 
 
+
+
+
+
+
+
+/*
+* FOOTER
+*/
+.site-footer .col-full {
+	display: flex;
+	justify-content: space-between;
+}
+.site-footer .copyright{
+	background-color: #000;
+
+}
+.site-footer .col-full::before,
+.site-footer .col-full::after{
+	display: none;
+}
+.site-footer .copyright .col-full,
+.site-footer .copyright .col-full a{
+	color: #fff;
+}
+.site-footer .copyright .col-full > div{
+	display: flex;
+	justify-content: space-between;
+	gap: 1em;
+}
+.site-footer .copyright .col-full > div p{
+	margin: 0;
+}
 
 
 
