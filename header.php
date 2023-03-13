@@ -64,18 +64,16 @@
 			 */
 			do_action( 'storefront_header' );
 			?>
-			<div class="test-gegevens">
-			<h2><?php echo get_bloginfo('name'); ?></h2>
-			<p class="user-selling-points">
-				Vlotte verzending Staat bekend om tijdige verzending met tracking.<br>
-				Niet goed, geld terug<br>
-				Gratis retour<br>
-			</p>
-
-				
+			<div class="shop-headerblok">
+				<h2><?php echo get_bloginfo('name'); ?></h2>
+				<p class="user-selling-points">Nog niet af <br>
+					Vlotte verzending Staat bekend om tijdige verzending met tracking.<br>
+					Niet goed, geld terug<br>
+					Gratis retour<br>
+				</p>
 			</div>
 		</header>
-			</header>
+	</header>
 	
 	<?php
 	/**

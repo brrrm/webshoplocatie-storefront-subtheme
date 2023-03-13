@@ -31,7 +31,7 @@
                 <?php the_custom_logo('site-branding');?>
                 <?php echo get_bloginfo('name'); ?>  <br>
                 mist nog reviews<br>
-                <a href="mailto:<?php echo get_bloginfo('admin_email'); ?>">Customer Service</a>
+                <a href="mailto:<?php echo get_bloginfo('admin_email'); ?>"><?php echo get_bloginfo('name'); ?>'s customer service</a>
             </div>
             <div class="about">
                 <p><strong>  Over deze winkel</strong> </p>    
@@ -40,7 +40,9 @@
 
             <div class="social-media">
                 <p><strong> Volg ons op sociale media </strong></p>
-                kan ik nog niet linken geloof ik
+                
+                <a href="#" class="icon facebook" target="_blank"> Facebook</a>
+                <a href="#" class="icon linkedin" target="_blank"> Instagram</a>                
             </div>
     
             <div class="adress">
@@ -65,8 +67,8 @@
                     <p class="shipment" > Vlotte verzending </p>
                 </div> 
                 <div class="contact">
-                    <p class="phone"> Couldnt find number </p>
-                    <a href="mailto:<?php echo get_bloginfo('admin_email'); ?>"><?php echo get_bloginfo('admin_email'); ?></a>
+                    <p class="icon phone"> +31 6 000000 </p>
+                    <a class="icon mail" href="mailto:<?php echo get_bloginfo('admin_email'); ?>"><?php echo get_bloginfo('admin_email'); ?></a>
                 </div>
             </div>
         </div>
