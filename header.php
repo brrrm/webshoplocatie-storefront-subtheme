@@ -39,7 +39,7 @@
 			<button class="wl-close">Close</button>
 		</div>
 	</aside>
-	<header id="container">
+	<header id="main-header">
 		<header id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles(); ?>">
 		
 		</header><!-- #masthead -->
