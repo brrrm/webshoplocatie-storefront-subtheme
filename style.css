@@ -14,7 +14,7 @@ Version: 0.1
 	--store-accent-color: #FF9B26;
 	--basic-black: #323638;
 	--grey-background: #F2F2F2;
-	--mobile-width: 1em 2em;
+	--mobile-width: 1em;
 	--page-width: 1380px;
 }
 /* Het storefronts thema heeft dit aangemaakt. Ik snap alleen niet waarom  **/
@@ -37,6 +37,13 @@ Version: 0.1
 h1{
     text-align: left;
 }
+@media all and (max-width:768px){
+	h1{
+		font-size: 1em;
+		letter-spacing: 0;
+	}
+}
+
 
 .button{
     border-radius: 10px;
@@ -44,6 +51,12 @@ h1{
 	line-height: 1.5em;
     height: 3em;
     align-self: center;
+}
+@media all and (max-width:768px){
+	.button{
+		font-size: 0.875em;
+		padding: 0;
+	}
 }
 .icon{
     background: url(../webshoplocatie/img/mail-icon.svg) no-repeat left;
@@ -240,6 +253,7 @@ button.menu-toggle:hover,
 
 #content-header,
 .storefront-breadcrumb,
+.woocommerce-breadcrumb,
 #content,
 .site-footer .col-full{
     max-width: var(--page-width);
@@ -249,6 +263,7 @@ button.menu-toggle:hover,
 @media all and (max-width:1400px){
     #content-header,
     .storefront-breadcrumb,
+	.woocommerce-breadcrumb,
     #content,
     .site-footer .col-full{
         max-width: 100%;
@@ -278,18 +293,25 @@ button.menu-toggle:hover,
 
 #content-header{
     display: flex;
+	flex-wrap: wrap;
     align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+@media all and (min-width:1400px){
+	#content-header{
 	padding: 2em 0 1em 0;
+    }
 }
-@media all and (max-width:768px){
+@media all and (max-width:1400px){
     #content-header{
-        flex-wrap: wrap;
+		justify-content: space-between;
     }
 }
 @media all and (max-width:768px){
-    #content-header{
-        flex-wrap: wrap;
-    }
+	#content-header{
+		flex-wrap: wrap;
+	}
 }
 #content-header > .col-full{
     flex: 10em 0 0;
@@ -299,16 +321,51 @@ button.menu-toggle:hover,
     margin: 0;
 }
 #content-header .shop-headerblok{
-    flex: 55% 0 1;
-    padding-left: 1em;
+    flex: auto 1 1;
+    padding-left:1em;
+}
+@media all and (max-width:768px){
+	#content-header .shop-headerblok{
+		flex: 100% 0 0;
+		padding-left: 0;
+	}
+}
+#content-header .shop-headerblok h2{
+	margin: 0;
+}
+#content-header .shop-headerblok p{
+	font-size: 0.875em ;
+}
+#content-header .shop-headerblok  .reviews {
+	display: flex;
+	margin-bottom: 1em;
+}
+#content-header .shop-headerblok  .reviews p{
+	flex: auto 0 0;
+	margin: 0;
+}
+#content-header .shop-headerblok  .reviews .stars{
+	background: transparent url(../webshoplocatie/img/star_temp.png) no-repeat 0.5em ;
+	display: block;
+	flex: 50% 0 0;
 }
 
 /**rechter menu */
+.main-navigation.toggled div.menu{
+	position: absolute;
+    top: 100%;
+    background: #fff;
+    left: 0;
+    right: 0;
+	padding: 1em;
+	z-index: 1;
+	box-shadow: 0 8px 20px -12px black;
+}
 #content-header .storefront-primary-navigation{
     order: 3;
     flex: 40% 0 0;
     align-self: flex-end;
-    position: relative;
+    /* position: relative; */
 }
 #content-header .storefront-primary-navigation .col-full{
     display: flex;
@@ -323,13 +380,21 @@ button.menu-toggle:hover,
 	
 }
 #content-header .storefront-primary-navigation #site-navigation{
-    flex: auto 0 1;
+    flex: 20em 1 0;
 }
 #content-header .storefront-primary-navigation .site-header-cart {
-    flex: 35% 1 0;
+    flex: auto 0 1;
     position: inherit;
 }
-
+#content-header .storefront-primary-navigation .site-header-cart p.total{
+	text-align: right;
+}
+.site-header-cart .cart-contents{
+	display: flex;
+}
+.site-header-cart .cart-contents .count{
+	display: none;
+}
 @media all and (max-width:768px){
     #content-header .col-full{
         margin: 0;
@@ -345,15 +410,6 @@ button.menu-toggle:hover,
         padding: 0;
     }
 }
-
-
-/* 
-button.menu-toggle span{
-    text-indent: -999em;
-    display: block;
-	background-color: red !important;
-}
- */
 
 
 
@@ -390,6 +446,7 @@ ul.products li.product{
 	padding: 1em 0;
 	margin-bottom: 0;
 }
+
 ul.products li.product .woocommerce-LoopProduct-link {
     grid-area: image;
 }
@@ -427,7 +484,38 @@ ul.products li.product a.add_to_cart_button{
     grid-area: button;
     text-align: center;
 }
-
+@media all and (max-width:768px){
+	ul.products li.product{
+		column-gap: 1em;
+		row-gap: 0.5em;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+			"image title "
+			"image title"
+			"image price"
+			"image usp"
+			"image button";
+	}
+	ul.products li.product h2.woocommerce-loop-product__title{
+		height: 4.5em;
+		font-size: 0.875em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	ul.products li.product .price{
+		font-size: 0.875em;
+		margin: 0;
+	}
+	ul.products li.product a.button{
+		font-size: 0.875em;
+	}
+	ul.products li.product ul.product-cats{
+		display: none;
+	}
+	ul.products li.product .woocommerce-product-details__short-description{
+		display: none;
+	}
+}
 
 
 
@@ -479,10 +567,11 @@ ul.products li.product a.add_to_cart_button{
 /*
 * Footer
 */
+
 .site-footer .col-full {
     display: flex;
     justify-content: space-between;
-	padding: 1em 0;
+	/* padding: 1em 0; */
 }
 .site-footer p{
     margin: 0.5em 0;
@@ -530,6 +619,28 @@ ul.products li.product a.add_to_cart_button{
 .site-footer .copyright p{
     margin: 0;
 }
+@media all and (min-width:1400px){
+	.site-footer .col-full{
+		padding: 1em 0;
+	}
+}
+@media all and (max-width:768px){
+	.site-footer .col-full{
+		flex-wrap: wrap;
+		gap: 1em;
+	}
+	.site-footer .col-full > * {
+		flex: 47% 1 0;
+	}
+	.site-footer .copyright p,
+	.site-footer .copyright a{
+		font-size: 0.875em;
+	}
+}
+
+
+
+
 .icon.facebook{
     background-image: url(../webshoplocatie/img/facebook-icon.svg);
 }
@@ -565,14 +676,12 @@ ul.products li.product a.add_to_cart_button{
 body.woocommerce-cart .entry-content .woocommerce{
 	display: flex;
 	justify-content: space-between;
-	border: 1px solid blueviolet;
 }
 
 form.woocommerce-cart-form {
 	flex: 60% 0 0;
 	order: 1;
 	margin: 0;
-	border: 1px solid sienna;
 }
 .woocommerce-notices-wrapper{
 	order: 2;
@@ -581,27 +690,18 @@ form.woocommerce-cart-form {
 .cart-collaterals{
 	flex: 30% 0 0;
 	order: 3;
-	border: 1px solid pink;
 }
 
 .cart-collaterals .cart_totals {
 	min-width: 100%;
-	border: 1px solid purple;
 }
 .cart-collaterals table:before{
 	display: none;
-	border: 1px solid black;
 }
 
 .wc-proceed-to-checkout .button.checkout-button,
 #payment .place-order .button{
 	font-size: inherit;
-	border: 1px solid green;
-}
-form.woocommerce-cart-form .cart {
-	
-
-	
 }
 
 form.woocommerce-cart-form .cart thead tr th {

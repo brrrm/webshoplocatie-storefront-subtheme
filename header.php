@@ -64,9 +64,14 @@
 			 */
 			do_action( 'storefront_header' );
 			?>
+
 			<div class="shop-headerblok">
 				<h2><?php echo get_bloginfo('name'); ?></h2>
-				<p class="user-selling-points">Nog niet af <br>
+				<div class="reviews">
+					<p class="sales-total">29.097 verkopen  | </p>
+					<div class="stars">  </div>
+				</div>
+				<p class="user-selling-points">
 					Vlotte verzending Staat bekend om tijdige verzending met tracking.<br>
 					Niet goed, geld terug<br>
 					Gratis retour<br>
