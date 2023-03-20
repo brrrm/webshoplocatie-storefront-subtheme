@@ -68,7 +68,7 @@
 			<div class="shop-headerblok">
 				<h2><?php echo get_bloginfo('name'); ?></h2>
 				<div class="reviews">
-					<p class="sales-total">29.097 verkopen  | </p>
+					<p class="sales-total">29.097 reviews  | </p>
 					<div class="stars">  </div>
 				</div>
 				<p class="user-selling-points">

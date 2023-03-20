@@ -34,19 +34,18 @@
                 <a href="mailto:<?php echo get_bloginfo('admin_email'); ?>"><?php echo get_bloginfo('name'); ?>'s customer service</a>
             </div>
             <div class="about">
-                <p><strong>  Over deze winkel</strong> </p>    
+                <h3><strong>  Over deze winkel</strong> </h3>    
                 <?php wp_nav_menu();?>
             </div>
 
             <div class="social-media">
-                <p><strong> Volg ons op sociale media </strong></p>
-                
+                <h3><strong> Volg ons op sociale media </strong></h3>  
                 <a href="#" class="icon facebook" target="_blank"> Facebook</a>
                 <a href="#" class="icon linkedin" target="_blank"> Instagram</a>                
             </div>
     
             <div class="adress">
-                <p><strong>Adres </strong></p>
+                <h3><strong>Adres </strong></h3>
                 <?php echo get_bloginfo('name'); ?> <br>
                 <?php echo get_option( 'woocommerce_store_address' ); ?>  <br>
                 <?php echo  get_option( 'woocommerce_store_postcode' ); ?>  ,
@@ -58,8 +57,9 @@
                 <p><a href="<?php echo $mapsUrl; ?>" target="_blank">Bekijk op Google Maps</a></p>
             </div>
             <div class="shop-id">
-                <p><strong> <?php echo get_bloginfo('name'); ?></strong></p>
-                kvk en btw kan ik nog niet ophalen dacht ik
+                <h3><strong> <?php echo get_bloginfo('name'); ?></strong></h3>
+                <p> KVK: 1234567890 <br>
+                    BTW: 1234567890 </p>
             </div>
         </div><!-- .col-full -->
 
