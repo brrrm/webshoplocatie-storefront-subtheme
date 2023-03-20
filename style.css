@@ -271,6 +271,15 @@ button.menu-toggle:hover,
     }
 }
 
+.woocommerce-breadcrumb .this-page{
+	max-width: 20em;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
 .storefront-breadcrumb{
 	margin-bottom: 0;
 	padding: 1em 0em 0.5em 0;
@@ -568,6 +577,9 @@ ul.products li.product a.add_to_cart_button{
 * Footer
 */
 
+.site-footer{
+	padding: 0;
+}
 .site-footer .col-full {
     display: flex;
     justify-content: space-between;

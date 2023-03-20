@@ -49,8 +49,13 @@
                 <p><strong>Adres </strong></p>
                 <?php echo get_bloginfo('name'); ?> <br>
                 <?php echo get_option( 'woocommerce_store_address' ); ?>  <br>
-                <?php echo  get_option( 'woocommerce_store_city' ); ?>  ,
-                <?php echo  get_option( 'woocommerce_store_postcode' ); ?>  
+                <?php echo  get_option( 'woocommerce_store_postcode' ); ?>  ,
+                <?php echo  get_option( 'woocommerce_store_city' ); ?>  
+                <?php 
+                $addressEncoded = urlencode(get_option( 'woocommerce_store_address' ) . ' ' . get_option( 'woocommerce_store_postcode' ) . ' ' . get_option( 'woocommerce_store_city' ));
+                $mapsUrl = 'https://www.google.com/maps/search/' . $addressEncoded;
+                ?>
+                <p><a href="<?php echo $mapsUrl; ?>" target="_blank">Bekijk op Google Maps</a></p>
             </div>
             <div class="shop-id">
                 <p><strong> <?php echo get_bloginfo('name'); ?></strong></p>
