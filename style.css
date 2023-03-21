@@ -531,8 +531,12 @@ ul.products li.product .price ins span.amount bdi{
 	font-weight: 700;
     font-size: 1.8em;
 }
-ul.products li.product a.add_to_cart_button{
+ul.products li.product a.add_to_cart_button,
+ul.products li.product a.add_to_cart_button.added{
     grid-area: button;
+}
+ul.products li.product a.add_to_cart_button.added{
+	display: none;
 }
 .star-rating{
 	width: 100%;
