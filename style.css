@@ -764,31 +764,24 @@ form.woocommerce-cart-form .cart thead tr th {
 		font-size: 0.875em;
 	}
 }
-
-
-
-
-.icon.facebook{
+.site-footer .icon.facebook{
     background-image: url(../webshoplocatie/img/facebook-icon.svg);
 }
-.icon.linkedin{
+.site-footer .icon.linkedin{
     background-image: url(../webshoplocatie/img/linkedin-icon.svg);
 }
-.icon.instagram{
+.site-footer .icon.instagram{
     background-image: url(../webshoplocatie/img/instagram-icon.svg);
 }
-.icon.twitter{
+.site-footer .icon.twitter{
     background-image: url(../webshoplocatie/img/twitter-icon.svg);
 }
-.icon.youtube{
+.site-footer .icon.youtube{
     background-image: url(../webshoplocatie/img/youtube-icon.svg);
 }
-.icon.mail{
+.site-footer .icon.mail{
     background-image: url(../webshoplocatie/img/mail-icon.svg);
 }
-.icon.phone{
+.site-footer .icon.phone{
     background-image: url(../webshoplocatie/img/phone-icon.svg);
 }
-
-
-
