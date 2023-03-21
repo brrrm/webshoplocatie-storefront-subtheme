@@ -28,9 +28,12 @@
 			?>
 
             <div class="shop-identity">
-                <?php the_custom_logo('site-branding');?>
-                <?php echo get_bloginfo('name'); ?>  <br>
-                mist nog reviews<br>
+                <h2><?php echo get_bloginfo('name'); ?></h2>
+                <figure>
+                    <?php the_custom_logo('site-branding');?>
+                </figure>
+                <p> <?php echo get_bloginfo('name'); ?>  <br>
+                mist nog reviews<br> </p>
                 <a href="mailto:<?php echo get_bloginfo('admin_email'); ?>"><?php echo get_bloginfo('name'); ?>'s customer service</a>
             </div>
             <div class="about">
@@ -40,12 +43,19 @@
 
             <div class="social-media">
                 <h3><strong> Volg ons op sociale media </strong></h3>  
-                <a href="#" class="icon facebook" target="_blank"> Facebook</a>
-                <a href="#" class="icon linkedin" target="_blank"> Instagram</a>                
+                <ul class="social-media">
+                    <li>
+                        <a href="#" class="icon facebook" target="_blank"> Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#" class="icon linkedin" target="_blank"> Instagram</a>                
+                    </li>
+                </ul>
             </div>
     
             <div class="adress">
                 <h3><strong>Adres </strong></h3>
+                <p>
                 <?php echo get_bloginfo('name'); ?> <br>
                 <?php echo get_option( 'woocommerce_store_address' ); ?>  <br>
                 <?php echo  get_option( 'woocommerce_store_postcode' ); ?>  ,
@@ -54,12 +64,15 @@
                 $addressEncoded = urlencode(get_option( 'woocommerce_store_address' ) . ' ' . get_option( 'woocommerce_store_postcode' ) . ' ' . get_option( 'woocommerce_store_city' ));
                 $mapsUrl = 'https://www.google.com/maps/search/' . $addressEncoded;
                 ?>
+                </p>
                 <p><a href="<?php echo $mapsUrl; ?>" target="_blank">Bekijk op Google Maps</a></p>
             </div>
             <div class="shop-id">
                 <h3><strong> <?php echo get_bloginfo('name'); ?></strong></h3>
-                <p> KVK: 1234567890 <br>
-                    BTW: 1234567890 </p>
+                <dl>
+                    <dt>KVK nummer</dt>  <dd>123456789</dd>
+                    <dt>BTW nummer</dt>  <dd>123456789</dd>
+                </dl>
             </div>
         </div><!-- .col-full -->
 

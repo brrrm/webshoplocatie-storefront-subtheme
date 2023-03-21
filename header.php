@@ -40,11 +40,11 @@
 		</div>
 	</aside>
 	<header id="main-header">
-		<header id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles(); ?>">
+		<div id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles(); ?>">
 		
-		</header><!-- #masthead -->
+			</div><!-- #masthead -->
 		
-		<header id="content-header" class="content-header" role="banner" >
+		<div id="content-header" class="content-header" role="banner" >
 
 			<?php
 			/**
@@ -77,7 +77,7 @@
 					Gratis retour<br>
 				</p>
 			</div>
-		</header>
+			</div>
 	</header>
 	
 	<?php
