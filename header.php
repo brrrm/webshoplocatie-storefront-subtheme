@@ -71,11 +71,11 @@
 					<p class="sales-total">29.097 reviews  | </p>
 					<div class="stars">  </div>
 				</div>
-				<p class="user-selling-points">
-					Vlotte verzending Staat bekend om tijdige verzending met tracking.<br>
-					Niet goed, geld terug<br>
-					Gratis retour<br>
-				</p>
+				<ul class="user-selling-points">
+				<li><p>	Vlotte verzending Staat bekend om tijdige verzending met tracking. </p></li>
+				<li><p> Niet goed, geld terug</p></li>
+				<li><p> Gratis retour</p></li>
+			</ul>
 			</div>
 			</div>
 	</header>
