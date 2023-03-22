@@ -14,7 +14,7 @@ Version: 0.1
 	--store-accent-color: #FF9B26;
 	--basic-black: #323638;
 	--grey-background: #F2F2F2;
-	--mobile-padding: 1em 3em;
+	--mobile-padding: 1em 2em;
 	--page-width: calc(1063px - 4em);
 	
 }
@@ -37,12 +37,6 @@ Version: 0.1
 }
 h1{
     text-align: left;
-}
-@media all and (max-width:768px){
-	h1{
-		font-size: 1em;
-		letter-spacing: 0;
-	}
 }
 img{
 	width: 100%;
@@ -82,7 +76,6 @@ button.menu-toggle:hover,
 
 
 .webshoplocatie-banner{
-    position: fixed;
     top: 0;
     left: 0; 
     width: 100%;
@@ -816,4 +809,87 @@ form.woocommerce-cart-form .cart thead tr th {
 }
 .site-footer .icon.phone{
     background-image: url(../webshoplocatie/img/phone-icon.svg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.single-product .product *{
+	margin: 0;
+}
+.single-product .product .summary{
+	display: flex;
+	flex-wrap: wrap;
+}
+.single-product .product .summary h1{
+	flex: 100% 0 0;
+	order: 1;
+	border: 1px solid red;
+}
+.single-product .product .summary p.price{
+	display: none;
+}
+.single-product .product .summary .woocommerce-product-details__short-description{
+	flex: 100% 0 0;
+	order: 5;
+	border: 1px solid green;
+}
+.single-product .product .summary .product_meta{
+	flex: 70% 0 0;
+	order: 5;
+	border: 1px solid yellow;
+}
+.single-product .product .summary .edit-link{
+	flex: 30% 0 0;
+	order: 6;
+	border: 1px solid purple;
+}
+.single-product .product .summary form.variations_form{
+	flex: 100% 0 0;
+	order: 3;
+	display: flex;
+	flex-wrap: wrap;
+	border: 1px solid rosybrown;
+}
+
+
+form.variations_form .single_variation{
+	flex: 100% 0 0;
+	border: 1px solid orange;
+	order: 1;
+	display: flex;
+	align-items: flex-end;
+}
+.single-product div.product form.variations_form .single_variation .price{
+	font-size: 2em;
+	order: 2;
+	margin-bottom: 0;
+	border: 1px solid orchid;
+}
+form.variations_form .single_variation p.stock{
+	border: 1px solid salmon;
+	order: 1;
+}
+form.variations_form table{
+	flex: 100% 0 0;
+	order: 2;
+	border: 1px solid yellowgreen;
+}
+form.variations_form .variations_button{
+	flex: 100% 0 0;
+	order: 3;
+	border: 1px solid blue;
 }
