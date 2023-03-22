@@ -35,27 +35,39 @@ Version: 0.1
 .site-footer .col-full::after{
 	display: none;
 }
+
+button, 
+input[type=button], 
+input[type=reset], 
+input[type=submit], 
+input[type=number], 
+.button, 
+.wc-block-grid__products 
+.wc-block-grid__product 
+.wp-block-button__link, 
+.added_to_cart,
+select{
+	font-size: 1em;
+	border-radius: 5px;
+	line-height: 2.5em;
+	height: 2.5em;
+	font-weight: 400;
+	padding: 0 0.5em;
+	border: 1px solid #ccc;
+}
+.button{
+	padding: 0 1em;
+	text-align: center;
+}
+
 h1{
     text-align: left;
 }
 img{
 	width: 100%;
 }
-.add_to_chart,
-a.added_to_cart,
-.button{
-    border-radius: 5px;
-	height: 3em;
-	text-align: center;
-	font-weight: 400;
-}
-@media all and (max-width:768px){
-	.add_to_chart,
-	a.added_to_cart,
-	.button{
-		font-size: 0.875em;
-	}
-}
+
+
 
 
 .main-navigation ul li a, 
@@ -71,6 +83,12 @@ button.menu-toggle:hover,
     background-color: transparent;
     border: none;
     font-size: 1em;
+}
+@media all and (max-width:768px){
+	button.menu-toggle{
+		text-indent: -999em;
+		padding: 0 0.5em;
+	}
 }
 
 
@@ -391,6 +409,7 @@ button.menu-toggle:hover,
 #content-header .storefront-primary-navigation .col-full{
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 }
 
 #content-header .storefront-primary-navigation .primary-navigation ul.nav-menu{
@@ -433,6 +452,14 @@ button.menu-toggle:hover,
 	height: 1em;
 	line-height: 1.618;
 	margin: 0 1em 0 0;
+}
+@media all and (max-width:768px){
+	.site-header-cart a.cart-contents::before{
+		margin: 0;
+	}
+	.site-header-cart a.cart-contents .amount{
+		text-indent: -999em;
+	}
 }
 
 .site-header-cart:hover .widget_shopping_cart{
@@ -514,6 +541,7 @@ ul.products li.product .woocommerce-LoopProduct-link img{
 ul.products li.product h2.woocommerce-loop-product__title {
     grid-area: title;
     line-height: 1.35em;
+	font-size: 1.5em;
 } 
 ul.products li.product h2.woocommerce-loop-product__title a{
 	color: #000;
@@ -831,65 +859,88 @@ form.woocommerce-cart-form .cart thead tr th {
 	margin: 0;
 }
 .single-product .product .summary{
-	display: flex;
-	flex-wrap: wrap;
+	/* display: flex;
+	flex-wrap: wrap; */
+	display: grid;
 }
 .single-product .product .summary h1{
 	flex: 100% 0 0;
 	order: 1;
-	border: 1px solid red;
 }
 .single-product .product .summary p.price{
+	order: 2;
+	flex: 100% 0 0s;
+}
+.single-product .product.product-type-variable .summary p.price{
 	display: none;
 }
-.single-product .product .summary .woocommerce-product-details__short-description{
-	flex: 100% 0 0;
-	order: 5;
-	border: 1px solid green;
+.single-product .product .summary p.stock{
+	order: 3;
+
 }
+
+.single-product .product .summary .woocommerce-product-details__short-description{
+	display: none;
+}
+
 .single-product .product .summary .product_meta{
 	flex: 70% 0 0;
 	order: 5;
-	border: 1px solid yellow;
 }
 .single-product .product .summary .edit-link{
 	flex: 30% 0 0;
-	order: 6;
-	border: 1px solid purple;
+	order: 5;
 }
 .single-product .product .summary form.variations_form{
 	flex: 100% 0 0;
 	order: 3;
 	display: flex;
 	flex-wrap: wrap;
-	border: 1px solid rosybrown;
+	padding: 0;
+	margin: 0;
 }
-
+.single-product div.product .variations_button{
+	padding: 0;
+	padding-bottom: 1em;
+}
 
 form.variations_form .single_variation{
 	flex: 100% 0 0;
-	border: 1px solid orange;
 	order: 1;
 	display: flex;
-	align-items: flex-end;
 }
-.single-product div.product form.variations_form .single_variation .price{
-	font-size: 2em;
+form.variations_form .single_variation .woocommerce-variation-price{
 	order: 2;
-	margin-bottom: 0;
-	border: 1px solid orchid;
 }
-form.variations_form .single_variation p.stock{
-	border: 1px solid salmon;
+.single-product div.product form.variations_form .single_variation .woocommerce-variation-price .price{
+	font-size: 1.5em;
 	order: 1;
 }
+
+form.variations_form .single_variation .woocommerce-variation-availability{
+	order: 1;
+}
+form.variations_form .single_variation .woocommerce-variation-availability p.stock{
+	order: 2;
+	padding-right: 1em;
+	font-size: 1.5em;
+}
+form.variations_form .single_variation .woocommerce-variation-availability p.stock::before{
+	display: none;
+}
+
+
 form.variations_form table{
 	flex: 100% 0 0;
 	order: 2;
-	border: 1px solid yellowgreen;
+}
+form.variations_form table select#maat{
+	max-width: 10%;/** ik ben mij bewust dat dit niet iets is wat dynamisch is. hoe ga ik dit oplossen ? */
+}
+form.variations_form table a.reset_variations{
+	padding-left: 1em;
 }
 form.variations_form .variations_button{
 	flex: 100% 0 0;
 	order: 3;
-	border: 1px solid blue;
 }
