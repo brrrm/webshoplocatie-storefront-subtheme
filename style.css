@@ -59,7 +59,6 @@ select{
 	padding: 0 1em;
 	text-align: center;
 }
-
 h1{
     text-align: left;
 }
@@ -131,6 +130,7 @@ button.menu-toggle:hover,
 	padding: 0 0 0 0.5em;
 	font-style: italic;
 	outline: none;
+	border: none;
 }
 .webshoplocatie-banner a.wl-cart-btn{
 	flex: auto 0 0;
@@ -257,8 +257,11 @@ button.menu-toggle:hover,
     margin: 0;
     background-size: cover;
 }
-
-
+@media all and (max-width:768px){
+	#main-header .site-header{
+		min-height: 15vh;
+	}
+}
 #content-header,
 .storefront-breadcrumb,
 .woocommerce-breadcrumb,
@@ -316,7 +319,7 @@ button.menu-toggle:hover,
 	#content-header{
 		display: grid;
 	grid-template-areas: 	"text logo"
-						"text menu";
+							"text menu";
 	grid-template-columns: 1fr 0.5fr;
 }
 }
@@ -331,7 +334,7 @@ button.menu-toggle:hover,
 @media all and (max-width:768px){
     #content-header > .col-full{
         order: 1;
-        align-items: flex-start;
+        align-self: self-start;
         margin: 0;
 		grid-area: logo;
 		width: 100%;
@@ -512,8 +515,6 @@ button.menu-toggle:hover,
 .site-main ul.products{
     flex: 80% 1 0;
 }
-
-
 /* .storefront-full-width-content .site-main ul.products.columns-4 li.product, */
 ul.products li.product{
     display: grid;
@@ -531,6 +532,7 @@ ul.products li.product{
 	margin-bottom: 0;
 	align-items: center;
 }
+
 ul.products li.product > a.woocommerce-LoopProduct-link {
     grid-area: image;
 	min-width: 10em;
@@ -575,21 +577,25 @@ ul.products li.product .woocommerce-product-details__short-description p{
 ul.products li.product .price{
     grid-area: price;
 	align-self: end;
+	font-weight: 600;
+    font-size: 1.6em;
 }
-ul.products li.product .price ins span.amount bdi{
-	font-weight: 700;
-    font-size: 1.8em;
+ul.products li.product .price ins{
+	font-weight: 600;
 }
-ul.products li.product a.add_to_cart_button,
-ul.products li.product a.add_to_cart_button.added{
+ul.products li.product.sale .price del span.amount {
+	font-size: 0.9em;
+}
+ul.products li.product a.button,
+ul.products li.product a.added_to_cart{
     grid-area: button;
 }
-ul.products li.product a.add_to_cart_button.added{
+ul.products li.product a.button.added{
 	display: none;
 }
-.star-rating{
-	width: 100%;
+ul.products li.product .star-rating{
 	grid-area: stars;
+	width: 100%;
 }
 p.stars.selected a.active:before, 
 p.stars:hover a:before, 
@@ -636,10 +642,161 @@ p.stars.selected a:not(.active):before,
 		margin: 0;
 	}	
 	ul.products li.product ul.product-cats,
-	ul.products li.product .star-rating{
+	ul.products li.product .star-rating
+	{
 		display: none;
 	}
 }
+
+
+
+/* * reviews */
+.woocommerce-Reviews #comments h2.woocommerce-Reviews-title{
+	font-size: 1.3em;
+}
+.woocommerce-Reviews #comments h2.woocommerce-Reviews-title span{
+	font-style: italic;
+	font-weight: 600;
+	letter-spacing: 1px;
+	max-width: 40em;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+	line-height: 1.5em;
+}
+
+/* * dropdown product */
+.storefront-sticky-add-to-cart__content-product-info{
+    vertical-align: bottom;
+    line-height: 1.5em;
+}
+.storefront-sticky-add-to-cart__content-product-info .storefront-sticky-add-to-cart__content-title strong{
+	font-style: italic;
+	line-height: 0.7em;
+	padding-left: 0.5em;
+    letter-spacing: 1px;
+	max-width: 35em;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+
+
+/* .single-product .product.product-type-simple .summary,
+.single-product .product.product-type-grouped .summary,
+.single-product .product.product-type-variable .summary{
+	border: 1px solid #62C1B3;
+} */
+.single-product .product .summary  *{
+	margin: 0 ;
+}
+.single-product div.product .summary{
+	display: grid;
+	grid-template-columns: auto 1fr 1fr;
+	grid-template-areas: 	"title title title"
+							"stars stars stars"						
+							"price stock x"
+							"form form form"
+							"meta meta link";
+	align-items: center;
+}
+.single-product .product .summary .woocommerce-product-details__short-description,
+.single-product .product.product-type-variable .summary p.price{
+	display: none;
+}
+.single-product .product .summary h1{
+	grid-area: title;
+}
+.single-product .product .summary .woocommerce-product-rating{
+	grid-area: stars;
+	padding-left: 0.5em;
+	margin: 0.5em 0 1em 0;
+	
+}
+.single-product .product .summary p.price{
+	grid-area: price ;
+	margin: 0;
+}
+.single-product .product .summary p.stock{
+	grid-area: stock;
+	font-size: 1.5em;
+	padding-left: 0.5em;
+}
+.single-product .product .summary p.stock.out-of-stock::before,
+.single-product .product .summary p.stock.in-stock::before,
+.single-product .product .summary p.stock.in-stock{
+	display: none;
+}
+.single-product .product .summary .product_meta{
+	grid-area: meta;
+}
+.single-product .product .summary .edit-link{
+	grid-area: link;
+}
+.single-product .product .summary form{
+	grid-area: form;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;
+}
+
+/** default form */
+form.cart{
+	background-color: transparent;
+}
+
+
+
+/** Form op de variable producten */
+form.variations_form .single_variation{
+	display: flex;
+}
+form.variations_form .single_variation .woocommerce-variation-price{
+	font-size: 1.5em;
+}
+form.variations_form .single_variation .woocommerce-variation-availability .stock.out-of-stock{
+	padding-left: 0.5em;
+}
+
+form.variations_form table{
+	order: 2;
+}
+form.variations_form table select#maat{
+	max-width: 15%; /** ik ben mij bewust dat dit niet iets is wat dynamisch is. hoe ga ik dit oplossen ? */
+}
+form.variations_form table a.reset_variations{
+	padding-left: 1em;
+}
+
+form.variations_form .variations_button{
+	padding: 0;
+	flex: 100% 0 0;
+	order: 3;
+}
+
+
+
+form.grouped_form{
+	
+	display: block;
+}
+.single-product .product .summary form.grouped_form td p.stock{
+	font-size: 1em;
+	padding: 0;
+}
+form.grouped_form table{
+	margin: 1em 0;
+}
+form.grouped_form table tbody tr td{
+	padding: 0.5em;
+}
+
 
 
 /* *layout checkout en cart */
@@ -678,7 +835,6 @@ form.checkout #order_review {
 }
 
 form.woocommerce-cart-form .cart thead tr th {
-	
 	background-color: transparent;
 }
 @media all and (max-width:1200px){
@@ -695,39 +851,6 @@ form.woocommerce-cart-form .cart thead tr th {
 	background-color: transparent;
 }
 
-/* * reviews */
-.woocommerce-Reviews #comments h2.woocommerce-Reviews-title{
-	font-size: 1.3em;
-}
-.woocommerce-Reviews #comments h2.woocommerce-Reviews-title span{
-	font-style: italic;
-	font-weight: 600;
-	letter-spacing: 1px;
-	max-width: 40em;
-    overflow: hidden;
-    display: inline-block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    vertical-align: bottom;
-	line-height: 1.5em;
-}
-
-/* * dropdown product */
-.storefront-sticky-add-to-cart__content-product-info{
-    vertical-align: bottom;
-    line-height: 1.5em;
-}
-.storefront-sticky-add-to-cart__content-product-info .storefront-sticky-add-to-cart__content-title strong{
-	font-style: italic;
-	line-height: 0.7em;
-	padding-left: 0.5em;
-    letter-spacing: 1px;
-	max-width: 35em;
-    overflow: hidden;
-    display: inline-block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
 
 /* * Footer */
 .site-footer{
@@ -839,108 +962,3 @@ form.woocommerce-cart-form .cart thead tr th {
     background-image: url(../webshoplocatie/img/phone-icon.svg);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.single-product .product *{
-	margin: 0;
-}
-.single-product .product .summary{
-	/* display: flex;
-	flex-wrap: wrap; */
-	display: grid;
-}
-.single-product .product .summary h1{
-	flex: 100% 0 0;
-	order: 1;
-}
-.single-product .product .summary p.price{
-	order: 2;
-	flex: 100% 0 0s;
-}
-.single-product .product.product-type-variable .summary p.price{
-	display: none;
-}
-.single-product .product .summary p.stock{
-	order: 3;
-
-}
-
-.single-product .product .summary .woocommerce-product-details__short-description{
-	display: none;
-}
-
-.single-product .product .summary .product_meta{
-	flex: 70% 0 0;
-	order: 5;
-}
-.single-product .product .summary .edit-link{
-	flex: 30% 0 0;
-	order: 5;
-}
-.single-product .product .summary form.variations_form{
-	flex: 100% 0 0;
-	order: 3;
-	display: flex;
-	flex-wrap: wrap;
-	padding: 0;
-	margin: 0;
-}
-.single-product div.product .variations_button{
-	padding: 0;
-	padding-bottom: 1em;
-}
-
-form.variations_form .single_variation{
-	flex: 100% 0 0;
-	order: 1;
-	display: flex;
-}
-form.variations_form .single_variation .woocommerce-variation-price{
-	order: 2;
-}
-.single-product div.product form.variations_form .single_variation .woocommerce-variation-price .price{
-	font-size: 1.5em;
-	order: 1;
-}
-
-form.variations_form .single_variation .woocommerce-variation-availability{
-	order: 1;
-}
-form.variations_form .single_variation .woocommerce-variation-availability p.stock{
-	order: 2;
-	padding-right: 1em;
-	font-size: 1.5em;
-}
-form.variations_form .single_variation .woocommerce-variation-availability p.stock::before{
-	display: none;
-}
-
-
-form.variations_form table{
-	flex: 100% 0 0;
-	order: 2;
-}
-form.variations_form table select#maat{
-	max-width: 10%;/** ik ben mij bewust dat dit niet iets is wat dynamisch is. hoe ga ik dit oplossen ? */
-}
-form.variations_form table a.reset_variations{
-	padding-left: 1em;
-}
-form.variations_form .variations_button{
-	flex: 100% 0 0;
-	order: 3;
-}
