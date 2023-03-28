@@ -62,11 +62,13 @@ select{
 h1{
     text-align: left;
 }
+h2{
+	font-weight: 600;
+	text-align: left;
+}
 img{
 	width: 100%;
 }
-
-
 
 
 .main-navigation ul li a, 
@@ -83,13 +85,6 @@ button.menu-toggle:hover,
     border: none;
     font-size: 1em;
 }
-@media all and (max-width:768px){
-	button.menu-toggle{
-		text-indent: -999em;
-		padding: 0 0.5em;
-	}
-}
-
 
 
 .webshoplocatie-banner{
@@ -106,6 +101,7 @@ button.menu-toggle:hover,
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+	position: relative;
 }
 .webshoplocatie-banner p{
 	margin: 0;
@@ -235,7 +231,7 @@ button.menu-toggle:hover,
 	}
 	.wl-explanation{
 		top: 110%;
-		left: 0.5em;
+		left: 0.5em !important; 
 		width: calc(100% - 1em);
 		padding: 2em 1.333em;
 	}
@@ -308,6 +304,7 @@ button.menu-toggle:hover,
 }
 
 
+
 #content-header{
     display: flex;
 	flex-wrap: wrap;
@@ -315,15 +312,6 @@ button.menu-toggle:hover,
 	justify-content: space-between;
 	position: relative;
 }
-@media all and (max-width:768px){
-	#content-header{
-		display: grid;
-	grid-template-areas: 	"text logo"
-							"text menu";
-	grid-template-columns: 1fr 0.5fr;
-}
-}
-
 #content-header > .col-full{
     flex: 10em 0 0;
 }
@@ -331,35 +319,16 @@ button.menu-toggle:hover,
     width: 100%;
     margin: 0;
 }
-@media all and (max-width:768px){
-    #content-header > .col-full{
-        order: 1;
-        align-self: self-start;
-        margin: 0;
-		grid-area: logo;
-		width: 100%;
-    }
-}
-
 #content-header .shop-headerblok{
     flex: 33% 1 1;
     padding-left: 1em;
 }
-#content-header .shop-headerblok ul.user-selling-points{
-	margin: 0;
-}
-#content-header .shop-headerblok ul.user-selling-points li{
-	list-style:none;
-	padding: 0;
-}
-#content-header .shop-headerblok ul.user-selling-points li p {
+#content-header .shop-headerblok p{
+	font-size: 0.875em;
 	margin: 0;
 }
 #content-header .shop-headerblok h2{
 	margin: 0;
-}
-#content-header .shop-headerblok p{
-	font-size: 0.875em ;
 }
 #content-header .shop-headerblok .reviews {
 	display: flex;
@@ -367,52 +336,48 @@ button.menu-toggle:hover,
 }
 #content-header .shop-headerblok .reviews p{
 	flex: auto 0 0;
-	margin: 0;
 }
 #content-header .shop-headerblok  .reviews .stars{
 	background: transparent url(../webshoplocatie/img/star_temp.png) no-repeat 0.5em ;
 	display: block;
 	flex: 50% 0 0;
 }
+#content-header .shop-headerblok ul.user-selling-points{
+	margin: 0;
+}
+#content-header .shop-headerblok ul.user-selling-points li{
+	list-style:none;
+}
 @media all and (max-width:768px){
+	#content-header{
+		display: grid;
+		align-items: start;
+		grid-template-areas: 	"text logo"
+								"text menu";
+		grid-template-columns: 1fr 0.35fr;
+	}
 	#content-header .shop-headerblok{
-		flex: 100% 0 0;
 		padding-left: 0;
-		order: 2;
 		grid-area: text;
 	}
+	#content-header > .col-full{
+		width: 6em;
+		justify-self: end;
+		grid-area: logo;
+		padding-bottom: 1em;
+	}
 }
-
-
-/* * Menu op mobiel */
-.main-navigation.toggled div.menu{
-	position: absolute;
-    top: 100%;
-    background: #fff;
-    left: 0;
-    right: 0;
-	padding: 0 1em;
-	z-index: 1;
-	box-shadow: 0 8px 20px -12px black;
-}
-
-
 
 #content-header .storefront-primary-navigation{
     order: 3;
-    flex: auto 0 1;
+    flex: auto 1 1;
     align-self: flex-end;
-}
-@media all and (max-width: 1095px){
-	#content-header .storefront-primary-navigation{
-		flex: auto 1 1 ;
-		grid-area: menu;
-	}
 }
 #content-header .storefront-primary-navigation .col-full{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	justify-content: end;
 }
 
 #content-header .storefront-primary-navigation .primary-navigation ul.nav-menu{
@@ -424,14 +389,43 @@ button.menu-toggle:hover,
 #content-header .storefront-primary-navigation .primary-navigation ul.nav-menu li a{
 	padding: 0 1em;
 }
+@media all and (max-width:768px){
+	#content-header .storefront-primary-navigation{
+		grid-area: menu;		
+	}
+	#content-header .storefront-primary-navigation .col-full #site-navigation{
+		margin: 0;
+		flex: 100% 0 0;
+	}
+	#content-header .storefront-primary-navigation .col-full #site-navigation button.menu-toggle{
+		text-indent: -999em;
+		float: right;
+	}
+}
+/* * Menu uitklap op mobiel */
+.main-navigation.toggled div.menu{
+	position: absolute;
+    top: 100%;
+    background: #fff;
+	color: #000;
+    left: 0;
+    right: 0;
+	padding:  2em;
+	z-index: 1;
+	box-shadow: 0 8px 20px -12px black;
+}
+.handheld-navigation, 
+.nav-menu, .main-navigation div.menu>ul:not(.nav-menu){
+	transition: none;
+	display: block;
+}
 
 
 .site-header-cart {
-    flex: auto 0 1;
+    flex: auto 1 0;
 }
 .site-header-cart li a.cart-contents{
-	padding: 0;
-	display: flex;
+	padding: 0;	
 }
 .site-header-cart li a.cart-contents .count{
 	display: none;
@@ -442,27 +436,10 @@ button.menu-toggle:hover,
 .site-header-cart a.cart-contents::before{
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	display: inline-block;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	line-height: 1;
 	font-family: "Font Awesome 5 Free";
-	font-weight: 900;
-	line-height: inherit;
-	vertical-align: baseline;
 	content: "\f291";
-	height: 1em;
 	line-height: 1.618;
-	margin: 0 1em 0 0;
-}
-@media all and (max-width:768px){
-	.site-header-cart a.cart-contents::before{
-		margin: 0;
-	}
-	.site-header-cart a.cart-contents .amount{
-		text-indent: -999em;
-	}
+	margin: 0 0.5em 0 0;
 }
 
 .site-header-cart:hover .widget_shopping_cart{
@@ -586,7 +563,7 @@ ul.products li.product .price ins{
 ul.products li.product.sale .price del span.amount {
 	font-size: 0.9em;
 }
-ul.products li.product a.button,
+ul.products li.product .button,
 ul.products li.product a.added_to_cart{
     grid-area: button;
 }
@@ -595,7 +572,6 @@ ul.products li.product a.button.added{
 }
 ul.products li.product .star-rating{
 	grid-area: stars;
-	width: 100%;
 }
 p.stars.selected a.active:before, 
 p.stars:hover a:before, 
@@ -849,50 +825,54 @@ form.woocommerce-cart-form .cart thead tr th {
 #respond{
 	padding: 0;
 	background-color: transparent;
+	background-color: red;
 }
+.storefront-full-width-content .related.products>h2:first-child,
+.respond h2{
+	text-align: left;
+}
+
 
 
 /* * Footer */
 .site-footer{
 	padding: 0;
 }
-
 .site-footer h3{
 	font-size: 1em;
 }
-
 .site-footer p{
     margin: 0.5em 0;
 	line-height: 1.3em;
 }
-
-.site-footer .icon{
-    background: url(../webshoplocatie/img/mail-icon.svg) no-repeat left;
-    background-size: 1em;
-    height: 1.5em;
-    display: block;
-    padding-left: 1.5em;
-    line-height: 1.5em;
-} 
+.site-footer ul{
+	margin: 0;
+}
+.site-footer ul li{
+    list-style: none;
+    padding-left: 0;
+}
+.site-footer ul li a{
+	text-decoration: none;
+}
 
 .site-footer .col-full {
     display: flex;
     justify-content: space-between;
+	gap: 1em;
 }
-.site-footer .col-full ul{
-	margin: 0;
-}
-.site-footer .col-full ul li{
-    list-style: none;
-    padding-left: 0;
-}
-.site-footer .col-full ul li a{
-	text-decoration: none;
+.site-footer > .col-full > div {
+	flex: 20% 0 1;
 }
 
 .site-footer .shop-identity h2{
 	display: none;
 }
+.site-footer .shop-identity img{
+	max-height: 3em;
+	width: auto;
+}
+
 .site-footer .social-media ul.social-media{
     display: flex;
     flex-wrap: wrap;
@@ -921,18 +901,12 @@ form.woocommerce-cart-form .cart thead tr th {
 .site-footer .copyright p{
     margin: 0;
 }
-@media all and (min-width:1400px){
-	.site-footer .col-full{
-		padding: 1em 0;
-	}
-}
-@media all and (max-width:768px){
+@media all and (max-width:1000px){
 	.site-footer .col-full{
 		flex-wrap: wrap;
 		gap: 1em;
-		margin-bottom: 4em;
 	}
-	.site-footer .col-full > * {
+	.site-footer > .col-full > div {
 		flex: 47% 1 0;
 	}
 	.site-footer .copyright p,
@@ -940,6 +914,21 @@ form.woocommerce-cart-form .cart thead tr th {
 		font-size: 0.875em;
 	}
 }
+@media all and (max-width:768px){
+	.site-footer .col-full{
+		margin-bottom: 4em;
+	}
+}
+
+.site-footer .icon{
+    background-repeat: no-repeat;
+	background-position: center left;
+    background-size: 1em;
+    height: 1.5em;
+    display: block;
+    padding-left: 1.5em;
+    line-height: 1.5em;
+} 
 .site-footer .icon.facebook{
     background-image: url(../webshoplocatie/img/facebook-icon.svg);
 }
