@@ -34,7 +34,7 @@
                 </figure>
                 <p> <?php echo get_bloginfo('name'); ?>  <br>
                 mist nog reviews<br> </p>
-                <a href="mailto:<?php echo get_bloginfo('admin_email'); ?>"><?php echo get_bloginfo('name'); ?>'s customer service</a>
+                <a href="mailto:<?php echo get_bloginfo('admin_email'); ?>">Mail Customer service</a>
             </div>
             <div class="about">
                 <h3><strong>  Over deze winkel</strong> </h3>    

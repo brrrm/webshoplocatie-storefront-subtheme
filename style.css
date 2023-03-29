@@ -62,6 +62,12 @@ select{
 h1{
     text-align: left;
 }
+@media all and (max-width:768px){
+	h1{
+		font-size: 1.5em;
+		font-weight: 600;
+	}
+}
 h2{
 	font-weight: 600;
 	text-align: left;
@@ -690,9 +696,7 @@ p.stars.selected a:not(.active):before,
 }
 .single-product .product .summary .woocommerce-product-rating{
 	grid-area: stars;
-	padding-left: 0.5em;
 	margin: 0.5em 0 1em 0;
-	
 }
 .single-product .product .summary p.price{
 	grid-area: price ;
@@ -825,7 +829,6 @@ form.woocommerce-cart-form .cart thead tr th {
 #respond{
 	padding: 0;
 	background-color: transparent;
-	background-color: red;
 }
 .storefront-full-width-content .related.products>h2:first-child,
 .respond h2{
@@ -861,10 +864,11 @@ form.woocommerce-cart-form .cart thead tr th {
     justify-content: space-between;
 	gap: 1em;
 }
-.site-footer > .col-full > div {
-	flex: 20% 0 1;
+@media all and (min-width: 769px){
+	.site-footer > .col-full > div {
+		flex: 20% 0 1;
+	}
 }
-
 .site-footer .shop-identity h2{
 	display: none;
 }
@@ -884,6 +888,17 @@ form.woocommerce-cart-form .cart thead tr th {
 	width: 2.5em;
 	text-indent: -999em;
 	background-size: 2.5em;
+}
+.site-footer .shop-id dl{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0;
+}
+.site-footer .shop-id dt,
+.site-footer .shop-id dd{
+	flex: auto 0 0;
+	margin: 0;
 }
 
 .site-footer .copyright{
@@ -906,8 +921,43 @@ form.woocommerce-cart-form .cart thead tr th {
 		flex-wrap: wrap;
 		gap: 1em;
 	}
-	.site-footer > .col-full > div {
-		flex: 47% 1 0;
+	.site-footer .shop-identity{
+		flex: 100% 0 0;
+		order: 1;
+		display: grid;
+		grid-template-areas:	"logo top"
+								"logo bottom";
+	}
+	.site-footer .shop-identity figure{
+		grid-area: logo;
+
+	}
+	.site-footer .shop-identity img{
+		max-height: 7em;
+	}
+	.site-footer .shop-identity > .p{
+		grid-area: top;
+	}
+	.site-footer .shop-identity > a{
+		grid-area: bottom;
+	}
+	.site-footer .social-media{
+		order: 5;
+		flex: 100% 0 0;
+		align-self: end;
+	}
+	.site-footer .about {
+		order: 2;
+	}
+	.site-footer .adress{
+		order: 3;
+	}
+	.site-footer .shop-id{
+		order: 4;
+	}
+	.site-footer .shop-id dt,
+	.site-footer .shop-id dd{
+		flex: 50% 0 0;
 	}
 	.site-footer .copyright p,
 	.site-footer .copyright a{
@@ -918,6 +968,7 @@ form.woocommerce-cart-form .cart thead tr th {
 	.site-footer .col-full{
 		margin-bottom: 4em;
 	}
+	
 }
 
 .site-footer .icon{
