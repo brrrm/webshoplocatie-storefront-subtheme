@@ -32,8 +32,7 @@
                 <figure>
                     <?php the_custom_logo('site-branding');?>
                 </figure>
-                <p> <?php echo get_bloginfo('name'); ?>  <br>
-                mist nog reviews<br> </p>
+                <p> <?php echo get_bloginfo('name'); ?> </p>
                 <a href="mailto:<?php echo get_bloginfo('admin_email'); ?>">Mail Customer service</a>
             </div>
     
@@ -78,13 +77,11 @@
         <div class="copyright"> 
             <div class="col-full"> 
                 <div class="usps">
-                    (nog niet dynamisch) 
                     <p class="usp refund"> Niet goed geld terug </p>
                     <p class="usp return" > Gratis retour </p>
-                    <p class="shipment" > Vlotte verzending </p>
+                    <p class="usp shipment" > Vlotte verzending </p>
                 </div> 
                 <div class="contact">
-                    <p class="icon phone"> +31 6 000000 </p>
                     <a class="icon mail" href="mailto:<?php echo get_bloginfo('admin_email'); ?>"><?php echo get_bloginfo('admin_email'); ?></a>
                 </div>
             </div>

@@ -336,7 +336,7 @@ button.menu-toggle:hover,
 #content-header .shop-headerblok h2{
 	margin: 0;
 }
-#content-header .shop-headerblok .reviews {
+/* #content-header .shop-headerblok .reviews {
 	display: flex;
 	margin-bottom: 1em;
 }
@@ -347,7 +347,7 @@ button.menu-toggle:hover,
 	background: transparent url(../webshoplocatie/img/star_temp.png) no-repeat 0.5em ;
 	display: block;
 	flex: 50% 0 0;
-}
+} */
 #content-header .shop-headerblok ul.user-selling-points{
 	margin: 0;
 }
