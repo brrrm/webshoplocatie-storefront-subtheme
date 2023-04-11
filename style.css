@@ -352,7 +352,10 @@ button.menu-toggle:hover,
 	margin: 0;
 }
 #content-header .shop-headerblok ul.user-selling-points li{
-	list-style:none;
+	list-style: none;
+	padding-left:1.5em ;
+	background: url(../webshoplocatie/img/check.svg) no-repeat left center;
+	background-size: 1em;
 }
 @media all and (max-width:768px){
 	#content-header{
