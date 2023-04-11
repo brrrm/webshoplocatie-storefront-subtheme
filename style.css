@@ -981,19 +981,22 @@ form.woocommerce-cart-form .cart thead tr th {
     line-height: 1.5em;
 } 
 .site-footer .icon.facebook{
-    background-image: url(../webshoplocatie/img/facebook-icon.svg);
+    background-image: url(../webshoplocatie/img/facebook.svg);
 }
 .site-footer .icon.linkedin{
-    background-image: url(../webshoplocatie/img/linkedin-icon.svg);
+    background-image: url(../webshoplocatie/img/linkedin.svg);
 }
 .site-footer .icon.instagram{
-    background-image: url(../webshoplocatie/img/instagram-icon.svg);
+    background-image: url(../webshoplocatie/img/instagram.svg);
 }
 .site-footer .icon.twitter{
-    background-image: url(../webshoplocatie/img/twitter-icon.svg);
+    background-image: url(../webshoplocatie/img/twitter.svg);
 }
-.site-footer .icon.youtube{
-    background-image: url(../webshoplocatie/img/youtube-icon.svg);
+.site-footer .icon.pinterest{
+    background-image: url(../webshoplocatie/img/pinterest.svg);
+}
+.site-footer .icon.tiktok{
+    background-image: url(../webshoplocatie/img/pinterest.svg);
 }
 .site-footer .icon.mail{
     background-image: url(../webshoplocatie/img/mail-icon.svg);
