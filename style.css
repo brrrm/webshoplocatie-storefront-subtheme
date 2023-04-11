@@ -918,22 +918,20 @@ form.woocommerce-cart-form .cart thead tr th {
 		flex: 16% 0 1;
 	}
 }
-@media all and (max-width: 769px){
+@media all and (max-width: 1025px){
 	.site-footer > .col-full {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr; 
-		grid-template-areas: 	"identity identity identity identity "
-								"about adress id id"
-								"socials socials socials socials";
+		grid-template-areas: 	"identity identity socials socials "
+								"about adress id id";
+		margin-bottom: 4em;
 	}
 	.site-footer .col-full .shop-identity  {
 		grid-area: identity;
 		display: grid;
-		gap: 1em;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template-areas:	"logo top top top "
-								"logo bottom bottom bottom";
-								margin-bottom: 4em;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:	"logo top"
+								"logo bottom ";
 	}
 	.site-footer .shop-identity figure{
 		grid-area: logo;
@@ -964,7 +962,16 @@ form.woocommerce-cart-form .cart thead tr th {
 		font-size: 0.875em;
 	}
 }
-
+@media all and (max-width: 768px){
+	.site-footer > .col-full {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+	.site-footer > .col-full > div{
+		flex: 50% 0 0;
+	}
+}
 
 .site-footer .icon{
     background-repeat: no-repeat;
