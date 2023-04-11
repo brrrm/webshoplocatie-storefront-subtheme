@@ -881,8 +881,8 @@ form.woocommerce-cart-form .cart thead tr th {
 	width: auto;
 }
 .site-footer .col-full .social-media{
-	/* flex: 100% 0 0;
-	text-align: center; */
+	flex: 100% 0 0;
+	text-align: center;
 }
 .site-footer .social-media ul.social-media{
     display: flex;
