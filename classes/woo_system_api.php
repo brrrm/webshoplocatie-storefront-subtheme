@@ -42,6 +42,14 @@ class WC_REST_system_api_controller extends WC_REST_Controller {
 			),
 			'schema' => array( $this, 'get_public_batch_schema' ),
 		) );
+		register_rest_route( $this->namespace, '/' . $this->rest_base, array(
+			array(
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => array( $this, 'read_items' ),
+				'permission_callback' => array( $this, 'update_items_permissions_check' ),
+			),
+			'schema' => array( $this, 'get_public_batch_schema' ),
+		) );
 	}
 
 	/**
@@ -56,6 +64,27 @@ class WC_REST_system_api_controller extends WC_REST_Controller {
 		}
 
 		return true;
+	}
+
+	public function read_items($request){
+		/**
+		 * REST Server
+		 *
+		 * @var WP_REST_Server $wp_rest_server
+		 */
+		global $wp_rest_server;
+
+		// Get the request params.
+		$items    = array_filter( $request->get_params() );
+		$query    = $request->get_query_params();
+		$response = array();
+
+		foreach($items as $item){
+			$option = get_option($item);
+			$response[$item] = $option;
+		}
+
+		return $response;
 	}
 
 	/**
@@ -235,7 +264,7 @@ class WC_REST_system_api_controller extends WC_REST_Controller {
 	public function prepare_item_for_response( $item, $request ) {
 		unset( $item['option_key'] );
 		//$data     = $this->filter_setting( $item );
-		$data     = $this->add_additional_fields_to_object( $data, $request );
+		$data     = $this->add_additional_fields_to_object( $item, $request );
 		$data     = $this->filter_response_by_context( $data, empty( $request['context'] ) ? 'view' : $request['context'] );
 		$response = rest_ensure_response( $data );
 		//$response->add_links( $this->prepare_links( $data['id'], $request['group_id'] ) );
