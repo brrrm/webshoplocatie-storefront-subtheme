@@ -36,22 +36,6 @@
                 mist nog reviews<br> </p>
                 <a href="mailto:<?php echo get_bloginfo('admin_email'); ?>">Mail Customer service</a>
             </div>
-            <div class="about">
-                <h3><strong>  Over deze winkel</strong> </h3>    
-                <?php wp_nav_menu();?>
-            </div>
-
-            <div class="social-media">
-                <h3><strong> Volg ons op sociale media </strong></h3>  
-                <ul class="social-media">
-                    <li>
-                        <a href="#" class="icon facebook" target="_blank"> Facebook</a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon linkedin" target="_blank"> Instagram</a>                
-                    </li>
-                </ul>
-            </div>
     
             <div class="adress">
                 <h3><strong>Adres </strong></h3>
@@ -70,9 +54,24 @@
             <div class="shop-id">
                 <h3><strong> <?php echo get_bloginfo('name'); ?></strong></h3>
                 <dl>
-                    <dt>KVK nummer</dt>  <dd>123456789</dd>
-                    <dt>BTW nummer</dt>  <dd>123456789</dd>
+                    <dt>KVK nummer</dt>  <dd>34364550</dd>
+                    <dt>BTW nummer</dt>  <dd>000002601052</dd>
                 </dl>
+            </div>
+            <div class="about">
+                <h3><strong>  Over deze winkel</strong> </h3>    
+                <?php wp_nav_menu();?>
+            </div>
+            <div class="social-media">
+                <h3><strong> Volg ons op </strong></h3>  
+                <ul class="social-media">
+                    <li>
+                        <a href="#" class="icon facebook" target="_blank"> Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#" class="icon linkedin" target="_blank"> Instagram</a>                
+                    </li>
+                </ul>
             </div>
         </div><!-- .col-full -->
 
