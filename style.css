@@ -864,28 +864,37 @@ form.woocommerce-cart-form .cart thead tr th {
 
 .site-footer .col-full {
     display: flex;
+	flex-wrap: wrap;
     justify-content: space-between;
 	gap: 1em;
 }
-
+@media all and (min-width: 1025px){
+	.site-footer > .col-full > div {
+		flex: 16% 0 1;
+	}
+}
 .site-footer .shop-identity h2{
 	display: none;
 }
 .site-footer .shop-identity img{
-	max-height: 3em;
+	max-height: 6em;
 	width: auto;
+}
+.site-footer .col-full .social-media{
+	/* flex: 100% 0 0;
+	text-align: center; */
 }
 .site-footer .social-media ul.social-media{
     display: flex;
-    flex-wrap: wrap;
     align-content: flex-start;
 	gap: 2em;
+	justify-content: space-evenly;
 }
 .site-footer .social-media ul.social-media li a{
-	height: 2.5em;
-	width: 2.5em;
+	height: 1.5em;
+	width: 1.5em;
 	text-indent: -999em;
-	background-size: 2.5em;
+	background-size: 1.5em;
 }
 .site-footer .col-full .shop-id{
 	flex: 25% 0 0;
@@ -916,11 +925,7 @@ form.woocommerce-cart-form .cart thead tr th {
 .site-footer .copyright p{
     margin: 0;
 }
-@media all and (min-width: 1025px){
-	.site-footer > .col-full > div {
-		flex: 16% 0 1;
-	}
-}
+
 @media all and (max-width: 1025px){
 	.site-footer > .col-full {
 		display: grid;
@@ -938,9 +943,6 @@ form.woocommerce-cart-form .cart thead tr th {
 	}
 	.site-footer .shop-identity figure{
 		grid-area: logo;
-	}
-	.site-footer .shop-identity img{
-		max-height: 7em;
 	}
 	.site-footer .shop-identity > .p{
 		grid-area: top;
@@ -1001,7 +1003,7 @@ form.woocommerce-cart-form .cart thead tr th {
     background-image: url(../webshoplocatie/img/pinterest.svg);
 }
 .site-footer .icon.tiktok{
-    background-image: url(../webshoplocatie/img/pinterest.svg);
+    background-image: url(../webshoplocatie/img/tiktok.svg);
 }
 .site-footer .icon.mail{
     background-image: url(../webshoplocatie/img/mail-icon.svg);
