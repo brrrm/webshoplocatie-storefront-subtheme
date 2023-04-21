@@ -32,17 +32,12 @@
                 <figure>
                     <?php the_custom_logo('site-branding');?>
                 </figure>
+                <p> <?php echo get_bloginfo('name'); ?> </p>
             </div>
             <div class="about">
                 <h3><strong>Over deze winkel</strong> </h3>    
                 <?php wp_nav_menu();?>
-            </div>
-
-            <div class="social-media">
-                <h3><strong>Volg ons op sociale media </strong></h3>
-                <?php webshoplocatie_social_media_links(); ?>
-            </div>
-    
+            </div>    
             <div class="adress">
                 <h3><strong>Adres </strong></h3>
                 <p>
@@ -57,10 +52,13 @@
                 </p>
                 <p><a href="<?php echo $mapsUrl; ?>" target="_blank">Bekijk op Google Maps</a></p>
             </div>
-
             <div class="shop-id">
                 <h3><strong> <?php echo get_bloginfo('name'); ?></strong></h3>
                 <?php webshoplocatie_business_info(); ?>
+            </div>
+            <div class="social-media">
+                <h3><strong>Volg ons op sociale media </strong></h3>
+                <?php webshoplocatie_social_media_links(); ?>
             </div>
         </div><!-- .col-full -->
 

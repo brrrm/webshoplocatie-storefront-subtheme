@@ -336,7 +336,7 @@ button.menu-toggle:hover,
 #content-header .shop-headerblok h2{
 	margin: 0;
 }
-#content-header .shop-headerblok .reviews {
+/* #content-header .shop-headerblok .reviews {
 	display: flex;
 	margin-bottom: 1em;
 }
@@ -347,12 +347,15 @@ button.menu-toggle:hover,
 	background: transparent url(../webshoplocatie/img/star_temp.png) no-repeat 0.5em ;
 	display: block;
 	flex: 50% 0 0;
-}
+} */
 #content-header .shop-headerblok ul.user-selling-points{
 	margin: 0;
 }
 #content-header .shop-headerblok ul.user-selling-points li{
-	list-style:none;
+	list-style: none;
+	padding-left:1.5em ;
+	background: url(../webshoplocatie/img/check.svg) no-repeat left center;
+	background-size: 1em;
 }
 @media all and (max-width:768px){
 	#content-header{
@@ -861,33 +864,40 @@ form.woocommerce-cart-form .cart thead tr th {
 
 .site-footer .col-full {
     display: flex;
+	flex-wrap: wrap;
     justify-content: space-between;
 	gap: 1em;
 }
-@media all and (min-width: 769px){
+@media all and (min-width: 1025px){
 	.site-footer > .col-full > div {
-		flex: 20% 0 1;
+		flex: 16% 0 1;
 	}
 }
 .site-footer .shop-identity h2{
 	display: none;
 }
 .site-footer .shop-identity img{
-	max-height: 3em;
+	max-height: 6em;
 	width: auto;
 }
-
+.site-footer .col-full .social-media{
+	flex: 100% 0 0;
+	text-align: center;
+}
 .site-footer .social-media ul.social-media{
     display: flex;
-    flex-wrap: wrap;
     align-content: flex-start;
 	gap: 2em;
+	justify-content: space-evenly;
 }
 .site-footer .social-media ul.social-media li a{
-	height: 2.5em;
-	width: 2.5em;
+	height: 1.5em;
+	width: 1.5em;
 	text-indent: -999em;
-	background-size: 2.5em;
+	background-size: 1.5em;
+}
+.site-footer .col-full .shop-id{
+	flex: 25% 0 0;
 }
 .site-footer .shop-id dl{
 	display: flex;
@@ -897,10 +907,9 @@ form.woocommerce-cart-form .cart thead tr th {
 }
 .site-footer .shop-id dt,
 .site-footer .shop-id dd{
-	flex: auto 0 0;
+	flex: 45% 1 0;
 	margin: 0;
 }
-
 .site-footer .copyright{
     background-color: #000;
 }
@@ -916,24 +925,24 @@ form.woocommerce-cart-form .cart thead tr th {
 .site-footer .copyright p{
     margin: 0;
 }
-@media all and (max-width:1000px){
-	.site-footer .col-full{
-		flex-wrap: wrap;
-		gap: 1em;
-	}
-	.site-footer .shop-identity{
-		flex: 100% 0 0;
-		order: 1;
+
+@media all and (max-width: 1025px){
+	.site-footer > .col-full {
 		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr; 
+		grid-template-areas: 	"identity identity socials socials "
+								"about adress id id";
+		margin-bottom: 4em;
+	}
+	.site-footer .col-full .shop-identity  {
+		grid-area: identity;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 		grid-template-areas:	"logo top"
-								"logo bottom";
+								"logo bottom ";
 	}
 	.site-footer .shop-identity figure{
 		grid-area: logo;
-
-	}
-	.site-footer .shop-identity img{
-		max-height: 7em;
 	}
 	.site-footer .shop-identity > .p{
 		grid-area: top;
@@ -941,34 +950,32 @@ form.woocommerce-cart-form .cart thead tr th {
 	.site-footer .shop-identity > a{
 		grid-area: bottom;
 	}
-	.site-footer .social-media{
-		order: 5;
-		flex: 100% 0 0;
-		align-self: end;
+	.site-footer .col-full .about{
+		grid-area: about;
 	}
-	.site-footer .about {
-		order: 2;
+	.site-footer .col-full .adress{
+		grid-area: adress;
 	}
-	.site-footer .adress{
-		order: 3;
+	.site-footer .col-full .shop-id{
+		grid-area: id;
 	}
-	.site-footer .shop-id{
-		order: 4;
-	}
-	.site-footer .shop-id dt,
-	.site-footer .shop-id dd{
-		flex: 50% 0 0;
+	.site-footer .col-full .social-media{
+		grid-area: socials;
 	}
 	.site-footer .copyright p,
 	.site-footer .copyright a{
 		font-size: 0.875em;
 	}
 }
-@media all and (max-width:768px){
-	.site-footer .col-full{
-		margin-bottom: 4em;
+@media all and (max-width: 768px){
+	.site-footer > .col-full {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
 	}
-	
+	.site-footer > .col-full > div{
+		flex: 50% 0 0;
+	}
 }
 
 .site-footer .icon{
@@ -981,19 +988,22 @@ form.woocommerce-cart-form .cart thead tr th {
     line-height: 1.5em;
 } 
 .site-footer .icon.facebook{
-    background-image: url(../webshoplocatie/img/facebook-icon.svg);
+    background-image: url(../webshoplocatie/img/facebook.svg);
 }
 .site-footer .icon.linkedin{
-    background-image: url(../webshoplocatie/img/linkedin-icon.svg);
+    background-image: url(../webshoplocatie/img/linkedin.svg);
 }
 .site-footer .icon.instagram{
-    background-image: url(../webshoplocatie/img/instagram-icon.svg);
+    background-image: url(../webshoplocatie/img/instagram.svg);
 }
 .site-footer .icon.twitter{
-    background-image: url(../webshoplocatie/img/twitter-icon.svg);
+    background-image: url(../webshoplocatie/img/twitter.svg);
 }
-.site-footer .icon.youtube{
-    background-image: url(../webshoplocatie/img/youtube-icon.svg);
+.site-footer .icon.pinterest{
+    background-image: url(../webshoplocatie/img/pinterest.svg);
+}
+.site-footer .icon.tiktok{
+    background-image: url(../webshoplocatie/img/tiktok.svg);
 }
 .site-footer .icon.mail{
     background-image: url(../webshoplocatie/img/mail-icon.svg);
@@ -1001,4 +1011,3 @@ form.woocommerce-cart-form .cart thead tr th {
 .site-footer .icon.phone{
     background-image: url(../webshoplocatie/img/phone-icon.svg);
 }
-
