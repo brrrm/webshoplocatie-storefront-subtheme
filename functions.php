@@ -209,14 +209,21 @@ function webshoplocatie_theme_options( $wp_customize ) {
 function webshoplocatie_social_media_links(){
 	$theme_mods = get_option('theme_mods_webshoplocatie');
 	$output = '';
+	
+	if (isset($output)){
+		echo "<h3><strong>Volg ons op sociale media </strong></h3>";
+	}
 	if(isset($theme_mods['social_media_facebook'])
 	|| isset($theme_mods['social_media_twitter'])
 	|| isset($theme_mods['social_media_instagram'])
 	|| isset($theme_mods['social_media_pinterest'])
 	|| isset($theme_mods['social_media_tiktok'])){
 		$output = '<ul class="social-media">';
-	}
+	} 
 
+	if(!isset($theme_mods[''])){
+		echo "";
+	}
 	if(isset($theme_mods['social_media_facebook'])){
 		$output .= '<li><a href="' . $theme_mods['social_media_facebook'] . '" class="icon facebook" target="_blank" rel="nofollow"> Facebook</a></li>';
 	}
@@ -241,9 +248,12 @@ function webshoplocatie_social_media_links(){
 		$output .= '</ul>';
 	}
 
+	
 	echo $output;
 }
+function social_media_links(){
 
+}
 function webshoplocatie_business_info(){
 	$theme_mods = get_option('theme_mods_webshoplocatie');
 	$output = '';

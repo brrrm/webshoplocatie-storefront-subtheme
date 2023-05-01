@@ -57,7 +57,7 @@
                 <?php webshoplocatie_business_info(); ?>
             </div>
             <div class="social-media">
-                <h3><strong>Volg ons op sociale media </strong></h3>
+                <?php social_media_links(); ?>
                 <?php webshoplocatie_social_media_links(); ?>
             </div>
         </div><!-- .col-full -->
