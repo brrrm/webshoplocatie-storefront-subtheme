@@ -976,6 +976,9 @@ form.woocommerce-cart-form .cart thead tr th {
 	.site-footer > .col-full > div{
 		flex: 50% 0 0;
 	}
+	.site-footer .copyright{
+		padding-bottom: 5em;
+	}
 }
 
 .site-footer .icon{
