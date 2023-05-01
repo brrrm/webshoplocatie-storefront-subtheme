@@ -354,7 +354,7 @@ button.menu-toggle:hover,
 #content-header .shop-headerblok ul.user-selling-points li{
 	list-style: none;
 	padding-left:1.5em ;
-	background: url(../webshoplocatie/img/check.svg) no-repeat left center;
+	background: url(../webshoplocatie/img/check.svg) no-repeat left top;
 	background-size: 1em;
 }
 @media all and (max-width:768px){
@@ -363,7 +363,7 @@ button.menu-toggle:hover,
 		align-items: start;
 		grid-template-areas: 	"text logo"
 								"text menu";
-		grid-template-columns: 1fr 0.35fr;
+		grid-template-columns: 1fr 4em;
 	}
 	#content-header .shop-headerblok{
 		padding-left: 0;
