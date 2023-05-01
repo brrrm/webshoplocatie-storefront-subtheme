@@ -883,6 +883,10 @@ form.woocommerce-cart-form .cart thead tr th {
 .site-footer .col-full .social-media{
 	flex: 100% 0 0;
 	text-align: center;
+	display: flex;
+}
+.site-footer .col-full .social-media h3{
+	flex: auto 0 0;
 }
 .site-footer .social-media ul.social-media{
     display: flex;
