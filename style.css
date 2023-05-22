@@ -873,8 +873,11 @@ form.woocommerce-cart-form .cart thead tr th {
 		flex: 16% 0 1;
 	}
 }
-.site-footer .shop-identity h2{
-	display: none;
+.site-footer .shop-identity h2,
+.site-footer .shop-identity > p{
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
 }
 .site-footer .shop-identity img{
 	max-height: 6em;
@@ -946,6 +949,9 @@ form.woocommerce-cart-form .cart thead tr th {
 	}
 	.site-footer .shop-identity > .p{
 		grid-area: top;
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
 	}
 	.site-footer .shop-identity > a{
 		grid-area: bottom;
